@@ -1,13 +1,13 @@
 import '../css/app.css';
-
+import 'primeicons/primeicons.css'
 import { createInertiaApp } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import type { DefineComponent } from 'vue';
 import { createApp, h } from 'vue';
 import { ZiggyVue } from 'ziggy-js';
-import { initializeTheme } from './composables/useAppearance';
 import PrimeVue from 'primevue/config';
-import Aura from '@primeuix/themes/aura';
+import Noir from '@/presets/Noir';
+import AppState from '@/plugins/appState.js';
 
 // Extend ImportMeta interface for Vite...
 declare module 'vite/client' {
@@ -31,9 +31,15 @@ createInertiaApp({
         createApp({ render: () => h(App, props) })
             .use(PrimeVue, {
                 theme: {
-                    preset: Aura
+                    preset: Noir,
+                    options: {
+                        prefix: 'm',
+                        darkModeSelector: '.m-dark',
+                        cssLayer: false,
+                    }
                 }
             })
+            .use(AppState)
             .use(plugin)
             .use(ZiggyVue)
             .mount(el);
@@ -42,6 +48,3 @@ createInertiaApp({
         color: '#4B5563',
     },
 });
-
-// This will set light / dark mode on page load...
-initializeTheme();

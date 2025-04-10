@@ -8,6 +8,35 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    Avatar: typeof import('primevue/avatar')['default']
+    Badge: typeof import('primevue/badge')['default']
     Button: typeof import('primevue/button')['default']
+    BUtton: typeof import('primevue/button')['default']
+    Checkbox: typeof import('primevue/checkbox')['default']
+    Column: typeof import('primevue/column')['default']
+    DataTable: typeof import('primevue/datatable')['default']
+    DatePicker: typeof import('primevue/datepicker')['default']
+    Drawer: typeof import('primevue/drawer')['default']
+    IconField: typeof import('primevue/iconfield')['default']
+    IftaLabel: typeof import('primevue/iftalabel')['default']
+    InputIcon: typeof import('primevue/inputicon')['default']
+    InputNumber: typeof import('primevue/inputnumber')['default']
+    InputText: typeof import('primevue/inputtext')['default']
+    Menu: typeof import('primevue/menu')['default']
+    Menubar: typeof import('primevue/menubar')['default']
+    Message: typeof import('primevue/message')['default']
+    MultiSelect: typeof import('primevue/multiselect')['default']
+    PanelMenu: typeof import('primevue/panelmenu')['default']
+    ProgressBar: typeof import('primevue/progressbar')['default']
+    Select: typeof import('primevue/select')['default']
+    SelectButton: typeof import('primevue/selectbutton')['default']
+    Sidebar: typeof import('primevue/sidebar')['default']
+    Slider: typeof import('primevue/slider')['default']
+    Tag: typeof import('primevue/tag')['default']
+    ToggleSwitch: typeof import('primevue/toggleswitch')['default']
+  }
+  export interface ComponentCustomProperties {
+    Ripple: typeof import('primevue/ripple')['default']
+    StyleClass: typeof import('primevue/styleclass')['default']
   }
 }
